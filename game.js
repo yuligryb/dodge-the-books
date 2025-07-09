@@ -25,12 +25,12 @@ let scoreText;
 let gameOver = false;
 
 function preload() {
-    this.load.image('player', 'https://i.imgur.com/T5sM5eC.png'); // Use any small sprite
-    this.load.image('book', 'https://i.imgur.com/XSA2Oom.png');
+    this.load.image('player', 'https://raw.githubusercontent.com/kenneyNL/platformer-pack-redux/main/PNG/Characters/character_001.png');
+    this.load.image('book', 'https://raw.githubusercontent.com/kenneyNL/space-kit/main/PNG/Misc/bookRed.png');
 }
 
 function create() {
-    player = this.physics.add.sprite(400, 550, 'player').setScale(0.5);
+    player = this.physics.add.sprite(400, 550, 'player').setScale(1.5);
     player.setCollideWorldBounds(true);
 
     books = this.physics.add.group();
@@ -38,7 +38,7 @@ function create() {
         delay: 500,
         callback: () => {
             let x = Phaser.Math.Between(50, 750);
-            let book = books.create(x, 0, 'book').setScale(0.5);
+            let book = books.create(x, 0, 'book').setScale(1.2);
             book.setVelocityY(200);
         },
         loop: true
